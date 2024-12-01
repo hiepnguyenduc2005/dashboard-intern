@@ -1,0 +1,162 @@
+/* Define CSS variables for both themes */
+:root {
+  --bg-color-light: #D3D3D3;
+  --bg-color-dark: #2C2C2C;
+  --text-color-light: #333;
+  --text-color-dark: #ddd;
+  --component-bg-color-light: white;
+  --component-bg-color-dark: #3C3C3C;
+  --border-color-light: #D3D3D3;
+  --border-color-dark: #444;
+  --input-border-color-light: #ccc;
+  --input-border-color-dark: #555;
+  --submit-bg-color-light: #001f3f;
+  --submit-bg-color-dark: #0056b3;
+}
+
+/* Light theme as default */
+body {
+  flex-wrap: wrap;
+  align-content: start;
+  background-color: var(--bg-color-light);
+  color: var(--text-color-light);
+}
+
+/* Dark theme */
+body.dark-mode {
+  background-color: var(--bg-color-dark);
+  color: var(--text-color-dark);
+}
+
+#root {
+  margin: 0;
+  text-align: center; 
+  margin-top: 4.5rem;
+  width: 100%;
+}
+
+h1, h2, h3, h4, h5 {
+  margin: 0;
+}
+
+h1{
+  font-size: 20px;
+  font-weight: bold;
+}
+
+h2{
+  font-size: 16px;
+  font-weight: bold;
+  display: flex;
+  justify-self: start;
+}
+
+h3{
+  font-size: 18px;
+  font-weight: normal;
+  justify-self: start;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+h4{
+  font-size: 14px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+}
+
+h5{
+  font-size: 16px;
+  font-weight: 400;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  min-height: 24px;
+}
+
+.heading, .level, .component, .notfound {
+  border: 10px solid var(--border-color-light);
+  background-color: var(--component-bg-color-light);
+  padding: 20px;
+}
+
+/* Dark mode component styles */
+body.dark-mode .heading,
+body.dark-mode .level,
+body.dark-mode .component,
+body.dark-mode .notfound {
+  border-color: var(--border-color-dark);
+  background-color: var(--component-bg-color-dark);
+}
+
+.subhead, .grid4, .grid2 {
+  display: grid;
+}
+
+.grid4 {
+  grid-template-columns: 25% 25% 25% 25%;
+}
+
+.grid2 {
+  grid-template-columns: 50% 50%;
+}
+
+.setting {
+  padding: 10px;
+}
+
+.setting-button:hover, .setting-button:focus, .setting-button:active {
+  background: none !important;
+  box-shadow: none !important;
+}
+
+.notfound {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 600px;
+  text-align: center;
+}
+
+.notfound h1 {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.notfound h2 {
+  font-size: 24px;
+}
+
+input[type="text"], input[type="password"], input[type="submit"], select {
+  width: 50%;
+  padding: 10px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid var(--input-border-color-light);
+  border-radius: 4px;
+}
+
+/* Dark mode input styles */
+body.dark-mode input[type="text"],
+body.dark-mode input[type="password"],
+body.dark-mode input[type="submit"], 
+body.dark-mode select {
+  border-color: var(--input-border-color-dark);
+}
+
+input[type="submit"] {
+  background-color: var(--submit-bg-color-light);
+  color: white;
+}
+
+/* Dark mode submit button */
+body.dark-mode input[type="submit"] {
+  background-color: var(--submit-bg-color-dark);
+}

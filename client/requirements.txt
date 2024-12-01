@@ -1,0 +1,4 @@
+react-router-dom
+chart-js
+react-chartjs-2
+axios

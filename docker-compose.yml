@@ -1,0 +1,48 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: ...
+      MYSQL_DATABASE: dashboard
+      MYSQL_PASSWORD: ...
+    volumes:
+      - mysql-data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 30s
+
+  server:
+    # image: hiepnguyenduc2005/new-server
+    build: 
+      context: ./server
+    environment:
+      API_KEY: ...
+      PASSWORD: ...
+      SECRET: ...
+      FLASK_ENV: development
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "5000:5000"
+    command: ["sh", "-c", "sleep 10 && python app.py"]
+      
+
+  client:
+    # image: hiepnguyenduc2005/client
+    build:
+      context: ./client
+    ports:
+      - "80:80"
+    environment:
+      SERVER_URL: http://server:5000/
+    depends_on:
+      - server
+
+volumes:
+  mysql-data:
