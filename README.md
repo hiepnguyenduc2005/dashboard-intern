@@ -26,6 +26,7 @@ This project is a **Performance Dashboard** built to track and visualize the per
 - **Flask**: For REST API development.
 - **Pydantic**: For data validation and serialization.
 - **MySQL**: Database to store and query performance metrics.
+- **PyTest**: For unit tests.
 
 ### Deployment:
 - **Docker**: For containerization.
