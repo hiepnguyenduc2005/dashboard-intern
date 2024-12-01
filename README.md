@@ -78,20 +78,20 @@ The frontend will be available at http://localhost:3000 and the backend API at h
     ```bash
     npm start
     ```
-
+---
 ## CI/CD
 This project includes a GitLab CI/CD pipeline that automates:
 - Testing for backend and frontend.
 - Building Docker images.
 - Deploying the application to the desired environment.
 To set up GitLab CI/CD, ensure the .gitlab-ci.yml file is configured with your Docker registry and deployment environment details.
-
+---
 ## Contribution
 Contributions are welcome! Please fork the repository and create a pull request with your changes.
-
+---
 ## License
 This project is licensed under the MIT License. See LICENSE for details.
-
+---
 ## Contact
 For any queries or suggestions, feel free to reach out via the project repository.
 Let me know if you'd like further customization!
