@@ -62,7 +62,7 @@ The frontend will be available at http://localhost:3000 and the backend API at h
 ### Without Docker:
 1. Install backend dependencies:
     ```bash
-    cd backend
+    cd server
     pip install -r requirements.txt
     ```
 2. Set up the MySQL database and configure the .env file in the backend folder.
@@ -72,12 +72,12 @@ The frontend will be available at http://localhost:3000 and the backend API at h
     ```
 4. Install frontend dependencies:
     ```bash
-    cd frontend
+    cd client
     npm install
     ```
-5. Start the React development server:
+5. Start the React client:
     ```bash
-    npm start
+    npm run dev
     ```
 ---
 ## CI/CD
